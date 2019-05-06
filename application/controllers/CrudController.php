@@ -9,7 +9,7 @@
 		public function index() {
 			$this->load->view('includes/header');
 			$data['users'] = $this->Crud_Model->getAllData();
-			$this->load->view('crudView',$data);
+			$this->load->view('view',$data);
 			$this->load->view('includes/footer');
 		}
 
@@ -21,7 +21,7 @@
 		public function edit($id) {
 			$data['user'] = $this->Crud_Model->getData($id);
 			$this->load->view('includes/header');
-			$this->load->view('crudEdit',$data);
+			$this->load->view('edit',$data);
 			$this->load->view('includes/footer');
 		}
 
