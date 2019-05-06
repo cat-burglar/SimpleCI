@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Edit Data</h1>
+	<h3 class="mt-4 mb-3 border-bottom">Edit Data</h3>
 	<form method="post" action="<?php echo site_url('CrudController/update')?>/<?php echo $user->id?>">
 		<div class="form-group">
 			<label for="exampleInputEmail1">First Name</label>

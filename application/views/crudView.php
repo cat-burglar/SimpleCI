@@ -1,10 +1,7 @@
 
-	<h1>CRUD View</h1>
-	
-	<div class="container">
+	<div class="container mt-5">
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Add </button>
-		<br />
-		<br />
+
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
@@ -44,7 +41,7 @@
 		  </div>
 		</div>
 
-		<table class="table">
+		<table class="table mt-3">
 		  <thead class="thead-dark">
 		    <tr>
 		      <th scope="col">#</th>
