@@ -1,7 +1,7 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Crud_Model extends CI_Model {
+	class Member_Model extends CI_Model {
 
 		public function __construct() {
 			parent::__construct();
@@ -12,21 +12,21 @@
 			$data = array (
 				'firstName' => $this->input->post('firstName'),
 				'lastName' => $this->input->post('lastName'),
-				'birthDate' => $this->input->post('birthDate'),
+				'email' => $this->input->post('email'),
+				'birthdate' => $this->input->post('birthdate'),
 				'contactNo' => $this->input->post('contactNo'),
-				'bio' => $this->input->post('bio')
+				'bio' => $this->input->post('bio'),
+				'password' => $this->input->post('password')
 			);
-			$this->db->insert('users',$data);
+			$this->db->insert('members',$data);
 		}
 
 		function getAllData() {
-			$query = $this->db->query('SELECT * FROM users');
+			$query = $this->db->query('SELECT * FROM members');
 			return $query->result();
 		}
 		function getData($id) {
-			//$sql = "SELECT * FROM users WHERE id = ?";
-			//$query = $this->db->query($sql, array($id));
-			$query = $this->db->query('SELECT * FROM users WHERE `id` =' .$id);
+			$query = $this->db->query('SELECT * FROM members WHERE `id` =' .$id);
 			return $query->row();
 		}
 
@@ -34,15 +34,17 @@
 			$data = array (
 				'firstName' => $this->input->post('firstName'),
 				'lastName' => $this->input->post('lastName'),
-				'birthDate' => $this->input->post('birthDate'),
+				'email' => $this->input->post('email'),
+				'birthdate' => $this->input->post('birthdate'),
 				'contactNo' => $this->input->post('contactNo'),
-				'bio' => $this->input->post('bio')
+				'bio' => $this->input->post('bio'),
+				'password' => $this->input->post('password')
 			);
 			$this->db->where('id',$id);
-			$this->db->update('users', $data);
+			$this->db->update('members', $data);
 		}
 		function deleteData($id) {
 			$this->db->where('id',$id);
-			$this->db->delete('users');
+			$this->db->delete('members');
 		}
 	}
