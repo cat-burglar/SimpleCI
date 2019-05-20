@@ -3,8 +3,8 @@
 		<div class="col-md-3">
 			<div class="profile-sidebar border px-5 py-5">
 				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-					<img src="<?php echo base_url();?>assets/images/profile.jpg" class=" img-thumbnail img-responsive" alt="">
+				<div class="profile-userpic ">
+					<img src="<?php echo base_url();?>assets/images/profile.jpg" class="mx-auto d-block img-thumbnail img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 
@@ -20,32 +20,41 @@
 				<!-- END SIDEBAR BUTTONS -->
 
 				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu mt-3">
+				<div class="profile-usermenu mt-3 border-top border-primary">
 					<div class="row">
-						<i class="col-auto fa fa-user"></i>
-						<p class="font-weight-bold">Name: &nbsp;</p>
-			    		<p><?php echo $member->firstName . ' ' . $member->lastName; ?></p>
+						<p class="text-left mt-3 ml-3"> <i class="fa fa-user"></i> <strong> Name: </strong> <?php echo $member->firstName . ' ' . $member->lastName; ?></p>
 					</div>
 			    	
 				    <div class="row">
-				    	<i class="col-auto fa fa-birthday-cake"></i>
-					    <h6 class="font-weight-bold">Birthdate: &nbsp;</h6>
-					    <p><?php echo $member->birthdate;?></p>
+					    <p class="text-left ml-3"> <i class="fa fa-birthday-cake"></i> <strong> Birthdate: </strong> <?php echo $member->birthdate;?></p>
 					</div>
 				    
 				    <div class="row">
-				    	<i class="col-auto fa fa-phone"></i>
-					    <h6 class="font-weight-bold">Contact No: &nbsp;</h6>
-					    <p><?php echo $member->contactNo; ?></p>
+					    <p class="text-left ml-3"> <i class="fa fa-phone"></i> <strong> Contact No: </strong> <?php echo $member->contactNo; ?></p>
 					</div>
 				    
+					<?php 
+						$type = $this->session->userdata('type');
+						if($type == '2') {
+					?>
+					<div class="row mx-auto">
+					    <p class="mx-auto"> <strong> Rating: </strong></p>
+					     <input type="hidden" id="rating" name="rating" value="<?php echo $member->rating;?>">   
+					</div>
+
+					<div class="star-rating">
+						<div class="stars-outer">
+				          <div class="stars-inner"></div>
+				        </div>
+					</div>
+
+					<?php } ?>
 				    <div class="row">
 				    	<i class="col-auto fa fa-pencil-square-o"></i>
-					    <h6 class="font-weight-bold">Biography: &nbsp;</h6>
-					     
+					    <p class="col-left"> <strong>Biography: </strong></p>   
 					</div>
 					<div class="row">
-						<p class="col-auto" ><?php echo $member->bio;?></p>
+						<p class="offset=4 col-auto text-justify"><?php echo $member->bio;?></p>
 					</div>
 				</div>
 				<!-- END MENU -->
@@ -59,4 +68,3 @@
             </div>
 		</div>
 	</div>
-
