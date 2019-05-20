@@ -6,4 +6,8 @@ In progress.
 
 ### Installation
 
-Add files in your local environment (XAMPP, etc)
+Clone files in your local environment (XAMPP, etc)
+Setup database
+Check config database
+or
+Import mine as reference -- check assets/database
