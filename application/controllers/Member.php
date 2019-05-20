@@ -22,11 +22,6 @@
            $this->load->view('includes/footer'); 
       	}  
 
-		public function create() {
-			$this->Member_Model->createData();
-			redirect("Login");
-		}
-
 		public function edit($id) {
 			$data['member'] = $this->Member_Model->getData($id);
 			$this->load->view('includes/header');
@@ -40,7 +35,6 @@
 		}
 
 		public function delete($id) {
- 
 			$this->Member_Model->deleteData($id);
 			redirect("Login/logout");
 		}

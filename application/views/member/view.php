@@ -35,6 +35,20 @@
 				    
 					<?php 
 						$type = $this->session->userdata('type');
+<<<<<<< HEAD
+						if($type == '3') {
+					?>
+					<div class="row mx-auto">
+					    <p class="mx-auto"> <strong> Rating: </strong></p>   
+					</div>
+
+					<div class="star-rating">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+=======
 						if($type == '2') {
 					?>
 					<div class="row mx-auto">
@@ -46,6 +60,7 @@
 						<div class="stars-outer">
 				          <div class="stars-inner"></div>
 				        </div>
+>>>>>>> master
 					</div>
 
 					<?php } ?>
@@ -67,4 +82,8 @@
 				
             </div>
 		</div>
+<<<<<<< HEAD
 	</div>
+=======
+	</div>
+>>>>>>> master

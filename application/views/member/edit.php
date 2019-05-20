@@ -3,23 +3,23 @@
 	<form method="post" action="<?php echo site_url('Member/update')?>/<?php echo $this->session->memberID?>">
 		<div class="form-group">
 			<label for="exampleInputEmail1">First Name</label>
-			<input type="text" class="form-control" name="firstName" value="<?php echo $member->firstName; ?>" aria-describedby="emailHelp" placeholder="First Name">
+			<input type="text" class="form-control" name="firstName" value="<?php echo $member->firstName; ?>" placeholder="First Name">
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Last Name</label>
-			<input type="text" class="form-control" name="lastName" value="<?php echo $member->lastName; ?>" aria-describedby="emailHelp" placeholder="Last Name">
+			<input type="text" class="form-control" name="lastName" value="<?php echo $member->lastName; ?>"  placeholder="Last Name">
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Birthdate</label>
-			<input type="date" class="form-control" name="birthdate" value="<?php echo $member->birthdate; ?>" aria-describedby="emailHelp" placeholder="Birthdate">
+			<input type="date" class="form-control" name="birthdate" value="<?php echo $member->birthdate; ?>" placeholder="Birthdate">
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Contact No</label>
-			<input type="text" class="form-control" name="contactNo" value="<?php echo $member->contactNo; ?>" aria-describedby="emailHelp" placeholder="Contact Number">
+			<input type="text" class="form-control" name="contactNo" value="<?php echo $member->contactNo; ?>" placeholder="Contact Number">
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Bio</label>
-			<input type="text" class="form-control" name="bio" value="<?php echo $member->bio; ?>" aria-describedby="emailHelp" placeholder="Biography">
+			<input type="text" class="form-control" name="bio" value="<?php echo $member->bio; ?>" placeholder="Biography">
 		</div>
 		<button type="submit" class="btn btn-primary" value="save">Submit</button>
 		<a class="btn btn-secondary" href="<?php echo site_url('Member')?>">Cancel</a>
@@ -31,13 +31,14 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 					    	<div class="modal-header">
-						      	<h5 class="modal-title" id="exampleModalLabel">Sorry to see you leave</h5>
+						      	<h5 class="modal-title" id="exampleModalLabel">Don't leave!</h5>
 						      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						        <span aria-hidden="true">&times;</span>
 						        </button>
 					      	</div>
 					      	<div class="modal-body">
-					      		<h7 class="modal-title" id="exampleModalLabel">Are you sure you want to permanently delete your account <?php echo $member->name?> ?</h7>
+					      		<h7 class="modal-title" id="exampleModalLabel">Are you sure you want to permanently delete your account <?php echo $member->firstName?> ?</h7>
+					      		<p class="modal-title text-danger" id="exampleModalLabel"> You can't retrieve any data once you deactivate your account</p>
 					      	</div>
 					      	<div class="modal-footer">
 					      		<form method="post" action="<?php echo site_url('Member/delete');?>/<?php echo $this->session->memberID?>">
