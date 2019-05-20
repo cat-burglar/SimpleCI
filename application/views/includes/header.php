@@ -10,10 +10,16 @@
 	<title>Codeigniter CRUD</title>
 </head>
 <body>
+		<?php 
+		$member = $this->session->userdata('memberID');
+		if ($member) { 
+	?>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
 	  	<a class="navbar-brand" href="<?php echo site_url('Pet')?>">Codeigniter</a>
 	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
+<<<<<<< HEAD
 
 	  	</button>
 			<p> 
@@ -21,6 +27,12 @@
 			$member = $this->session->userdata('memberID');
 			if ($member) { 
 			?>
+=======
+
+	  	</button>
+			<p> 
+
+>>>>>>> master
 		  	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 			    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 			    	<li class="nav-item active">
