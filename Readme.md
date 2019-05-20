@@ -7,7 +7,10 @@ In progress.
 ### Installation
 
 Clone files in your local environment (XAMPP, etc)
-Setup database
+
+#### Setup database
 Check config database
+
 or
-Import mine as reference -- check assets/database
+
+Import sql found at assets/database
