@@ -5,5 +5,8 @@ $route['login'] = 'Login/login';
 $route['Login'] = 'Login/login';
 $route['signup'] = 'Login/signup';
 $route['default_controller'] = 'Login/login';
+
+$route['medicine/(:any)'] = 'medicine/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

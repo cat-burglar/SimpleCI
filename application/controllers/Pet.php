@@ -34,8 +34,9 @@
 		}
 
 		public function delete($id) {
-
 			$this->Pet_Model->deleteData($id);
 			redirect("Pet");
 		}
+
+		
 	}
