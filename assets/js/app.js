@@ -10,3 +10,14 @@
 if(document.getElementById('due_date') < Date.now()) {
 	console.log("Due date passed");
 }*/
+	$(".due_date").each(function(index, value) {
+	    if($(this).val() > Date.now()) {
+			$(this).addClass("red-text");
+			console.log("Due date passed");
+		} else {
+			$(this).addClass("green-text");
+			console.log('good');
+		}
+	});
+
+	

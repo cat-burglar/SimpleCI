@@ -55,7 +55,7 @@
 			  			<td><?php echo $med->type; ?></td>
 			      		<td><?php echo $med->name; ?></td>
 			      		<td><?php echo $med->admin_date;?></td>
-			      		<td><?php echo $med->due_date;?></td>
+			      		<td class="due_date"><?php echo $med->due_date;?></td>
 			      		<td>
 			      			<a class="btn btn-primary" href="<?php echo site_url('Medicine/edit');?>/<?php echo $med->id?>">Edit</a>
 			      			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"> Delete </button>

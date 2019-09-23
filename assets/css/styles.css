@@ -297,6 +297,14 @@ footer ul.quick-links li:hover a i {
     font-weight: 700;
 }
 
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color:green;
+}
+
 @media (max-width:767px){
   footer h5 {
     padding-left: 0;
