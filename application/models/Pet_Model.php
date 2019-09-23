@@ -10,27 +10,23 @@
 
 		public function createData() {
 			$data = array (
+				'owner_id' => $this->session->memberID,
 				'name' => $this->input->post('name'),
 				'breed' => $this->input->post('breed'),
 				'birthdate' => $this->input->post('birthdate'),
 				'status' => $this->input->post('status'),
-				'bio' => $this->input->post('bio')
+				'notes' => $this->input->post('notes')
 			);
 			$this->db->insert('pets',$data);
-			$data2 = array (
-				'pet_id' => $this->db->insert_id(),
-				'member_id' => $this->session->memberID
-			);
-			$this->db->insert('ownership',$data2);
 		}
 
 		function getAllData() {
-			$query = $this->db->query('SELECT * FROM pets');
+			$member_id = $this->session->memberID;
+			$query = $this->db->query('SELECT * FROM pets WHERE `owner_id` =' .$member_id);
 			return $query->result();
 		}
+
 		function getData($id) {
-			//$sql = "SELECT * FROM users WHERE id = ?";
-			//$query = $this->db->query($sql, array($id));
 			$query = $this->db->query('SELECT * FROM pets WHERE `id` =' .$id);
 			return $query->row();
 		}
@@ -41,7 +37,7 @@
 				'breed' => $this->input->post('breed'),
 				'birthdate' => $this->input->post('birthdate'),
 				'status' => $this->input->post('status'),
-				'bio' => $this->input->post('bio')
+				'notes' => $this->input->post('notes')
 			);
 			$this->db->where('id',$id);
 			$this->db->update('pets', $data);

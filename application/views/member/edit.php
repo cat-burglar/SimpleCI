@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5 mb-5">
 	<h3 class="mt-4 mb-3 border-bottom">Edit Profile</h3>
 	<form method="post" action="<?php echo site_url('Member/update')?>/<?php echo $this->session->memberID?>">
 		<div class="form-group">

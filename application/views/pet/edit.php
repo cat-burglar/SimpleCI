@@ -3,24 +3,29 @@
 	<form method="post" action="<?php echo site_url('Pet/update')?>/<?php echo $pet->id?>">
 		<div class="form-group">
 
-			<label for="exampleInputEmail1">Pet Name</label>
-			<input type="text" class="form-control" name="name" value="<?php echo $pet->name; ?>" aria-describedby="emailHelp" placeholder="First Name">
+			<label for="name">Pet Name</label>
+			<input type="text" class="form-control" name="name" value="<?php echo $pet->name; ?>" placeholder="First Name">
 		</div>
 		<div class="form-group">
-			<label for="exampleInputEmail1">Breed</label>
-			<input type="text" class="form-control" name="breed" value="<?php echo $pet->breed; ?>" aria-describedby="emailHelp" placeholder="Last Name">
+			<label for="breed">Breed</label>
+			<input type="text" class="form-control" name="breed" value="<?php echo $pet->breed; ?>" placeholder="Last Name">
 		</div>
 		<div class="form-group">
-			<label for="exampleInputEmail1">Birthdate</label>
-			<input type="date" class="form-control" name="birthdate" value="<?php echo $pet->birthdate; ?>" aria-describedby="emailHelp" placeholder="Birthdate">
+			<label for="birthdate">Birthdate</label>
+			<input type="date" class="form-control" name="birthdate" value="<?php echo $pet->birthdate; ?>"placeholder="Birthdate">
 		</div>
 		<div class="form-group">
-		    <label for="exampleInputEmail1">Status</label>
-		    <textarea class="form-control" name="status"  rows="3"> <?php echo $pet->status; ?> </textarea>
+		    <label for="status">Status</label>
+		   	<select id="status" name="status">
+			  <option value="Healthy">Healthy</option>
+			  <option value="Needs Checkup">Needs Checkup</option>
+			  <option value="Sick">Sick</option>
+			</select>
 		</div>
+
 		<div class="form-group">
-		    <label for="exampleInputEmail1">Bio</label>
-		    <textarea class="form-control" name="bio"  rows="3"><?php echo $pet->bio; ?></textarea>
+		    <label for="notes">Notes</label>
+		    <textarea class="form-control" name="notes" rows="3"><?php echo $pet->notes; ?></textarea>
 		</div>
 		<button type="submit" class="btn btn-primary" value="save">Submit</button>
 		<a class="btn btn-secondary" href="<?php echo site_url('Pet')?>">Cancel</a>
