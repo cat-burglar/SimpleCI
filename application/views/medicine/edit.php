@@ -17,10 +17,10 @@
 		</div>
 		<div class="form-group">
 			<label for="admin_date">Admistered Date</label>
-			<input type="date" class="form-control" placeholder="mm/dd/yyyy" name="admin_date" value="<?php echo $med->admin_date; ?> />
+			<input type="date" class="form-control" placeholder="yyyy/mm/dd" name="admin_date" value="<?php echo $med->admin_date; ?>" />
 		</div>
 		
 		<button type="submit" class="btn btn-primary" value="save">Submit</button>
-		<a class="btn btn-secondary" href="<?php echo site_url('Medicine')?>">Cancel</a>
+		<a class="btn btn-secondary" href="<?php echo site_url('Medicine/viewRecord');?>/<?php echo $this->session->userdata('pet_id');?>">Cancel</a>
 	</form>
 </div>

@@ -18,13 +18,6 @@
 			$this->load->view('includes/footer');
 		}
 
-		/*public function viewMedicine($id) {
-			$this->load->view('includes/header');
-			$data['med'] = $this->Medicine_Model->getData($id);
-			$this->load->view('medicine/viewMedicine',$data);
-			$this->load->view('includes/footer');
-		}*/
-
 		public function create() {
 			$this->Medicine_Model->createData();
 			redirect("Medicine/viewRecord/".$this->session->userdata('pet_id'));

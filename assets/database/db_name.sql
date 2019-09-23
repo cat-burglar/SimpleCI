@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2019 at 06:59 AM
+-- Generation Time: Sep 23, 2019 at 12:19 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_name`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medicine`
+--
+
+CREATE TABLE `medicine` (
+  `id` int(11) NOT NULL,
+  `pet_id` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `admin_date` date NOT NULL,
+  `due_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `medicine`
+--
+
+INSERT INTO `medicine` (`id`, `pet_id`, `type`, `name`, `admin_date`, `due_date`) VALUES
+(1, 2, 'Vaccine', 'test', '2019-09-06', '2020-09-06'),
+(2, 2, 'Deworm', 'Test', '2019-09-23', '2019-12-23'),
+(3, 2, 'Kennel Cough', 'Rx', '2019-09-23', '2019-12-23');
 
 -- --------------------------------------------------------
 
@@ -52,81 +76,66 @@ INSERT INTO `members` (`id`, `firstName`, `lastName`, `email`, `birthdate`, `con
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ownership`
---
-
-CREATE TABLE `ownership` (
-  `id` int(11) NOT NULL,
-  `member_id` int(11) NOT NULL,
-  `pet_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `ownership`
---
-
-INSERT INTO `ownership` (`id`, `member_id`, `pet_id`) VALUES
-(2, 5, 2),
-(3, 5, 3);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `pets`
 --
 
 CREATE TABLE `pets` (
   `id` int(11) NOT NULL,
+  `owner_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `birthdate` date NOT NULL,
   `breed` varchar(50) NOT NULL,
-  `bio` text,
-  `status` text
+  `notes` text,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pets`
 --
 
-INSERT INTO `pets` (`id`, `name`, `birthdate`, `breed`, `bio`, `status`) VALUES
-(2, 'Levy', '2017-02-13', 'Husky', 'this is a bio', ' Very healthy '),
-(3, 'Miracle', '2523-03-13', 'Siberian Husky', 'Whaaat', '  Very healthy');
+INSERT INTO `pets` (`id`, `owner_id`, `name`, `birthdate`, `breed`, `notes`, `status`) VALUES
+(2, 5, 'Levy', '2017-02-13', 'Husky', 'this is a bio', 'Healthy'),
+(3, 5, 'Miracle', '2523-03-13', 'Siberian Husky', 'Whaaat', 'Needs Checkup'),
+(4, 0, 'Scarlet', '2014-07-13', 'German Shepherd', '', ''),
+(5, 0, 'Rano', '2019-09-11', 'asd', 'test', ''),
+(6, 0, 'test', '2019-09-27', 'eere', 'awe', ''),
+(7, 5, 'test', '2019-09-03', 'tset', '', 'Healthy');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `type`
+-- Table structure for table `trans_type`
 --
 
-CREATE TABLE `type` (
+CREATE TABLE `trans_type` (
   `id` int(11) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `description` varchar(255) NOT NULL
+  `name` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `type`
+-- Dumping data for table `trans_type`
 --
 
-INSERT INTO `type` (`id`, `name`, `description`) VALUES
-(1, 'Admin', ''),
-(2, 'Doctor', ''),
-(3, 'Owner', '');
+INSERT INTO `trans_type` (`id`, `name`) VALUES
+(1, 'Add pet'),
+(2, 'Remove pet'),
+(3, 'Edit pet profile'),
+(4, 'Edit personal profile');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `members`
+-- Indexes for table `medicine`
 --
-ALTER TABLE `members`
+ALTER TABLE `medicine`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ownership`
+-- Indexes for table `members`
 --
-ALTER TABLE `ownership`
+ALTER TABLE `members`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -136,14 +145,14 @@ ALTER TABLE `pets`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `type`
---
-ALTER TABLE `type`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `medicine`
+--
+ALTER TABLE `medicine`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `members`
@@ -152,22 +161,10 @@ ALTER TABLE `members`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `ownership`
---
-ALTER TABLE `ownership`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `type`
---
-ALTER TABLE `type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

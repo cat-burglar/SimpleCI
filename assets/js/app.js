@@ -1,5 +1,4 @@
-$(document).ready(function(){
- 	console.log("HEllo");
+/*$(document).ready(function(){
 	const starTotal = 5;
 	const rating = document.getElementById('rating').value;
 
@@ -10,4 +9,4 @@ $(document).ready(function(){
 
 if(document.getElementById('due_date') < Date.now()) {
 	console.log("Due date passed");
-}
+}*/
