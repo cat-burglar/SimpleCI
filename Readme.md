@@ -3,6 +3,7 @@ In progress.
 
 1. Added CRUD for pet and member
 2. Added login system
+3. Added Pet Medical feature
 
 ### Installation
 
