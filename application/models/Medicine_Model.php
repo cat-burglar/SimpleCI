@@ -24,10 +24,10 @@
 		}
 
 		public function getDueDate($type,$date) {
-			if($type == "Vaccine" || $type == "Rabies") {
-				$due_date = date('Y/m/d', strtotime("+1 year", strtotime($date)));
-			} else {
+			if($type == "Deworm") {
 				$due_date = date('Y/m/d', strtotime("+3 months", strtotime($date)));
+			} else {
+				$due_date = date('Y/m/d', strtotime("+1 year", strtotime($date)));
 			}
 			var_dump($due_date);
 			return $due_date;

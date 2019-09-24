@@ -1,7 +1,10 @@
 /* Made with love by Mutiullah Samim*/
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
-
+* {
+  padding: 0;
+  margin: 0;
+}
 html,body{
 height: 100%;
 font-family: 'Numans', sans-serif;
@@ -296,7 +299,7 @@ footer ul.quick-links li a i{
 footer ul.quick-links li:hover a i {
     font-weight: 700;
 }
-
+ /** Custom Styles **/
 .red-text {
   color: red;
 }
@@ -304,10 +307,13 @@ footer ul.quick-links li:hover a i {
 .green-text {
   color:green;
 }
-
-#first-opt {
-  border-bottom: 1px solid grey;
+.circle {
+  border-radius: 50%;
 }
+
+/** End of Custom Styles **/
+
+
 @media (max-width:767px){
   footer h5 {
     padding-left: 0;

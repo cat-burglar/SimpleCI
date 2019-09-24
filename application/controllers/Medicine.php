@@ -8,10 +8,13 @@
 				return redirect('Login/login');
 			}
 			$this->load->model('Medicine_Model');
+			$this->load->model('Pet_Model');
 		}
 
 		public function viewRecord($pet_id) {
 			$this->session->set_userdata('pet_id', $pet_id);
+			$data['pet'] = $this->Pet_Model->getData($pet_id);
+
 			$this->load->view('includes/header');
 			$data['meds'] = $this->Medicine_Model->getAllData($pet_id);
 			$this->load->view('medicine/view',$data);
