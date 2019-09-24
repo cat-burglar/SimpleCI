@@ -6,7 +6,7 @@
 		    <label for="type">Medicine Type</label>
 		   	<select id="type" name="type">
 
-		   	  <option disabled="disabled"><?php echo $med->type; ?> </option>
+		   	  <option selected="selected" value="<?php echo $med->type; ?>" ><?php echo $med->type; ?> </option>
 		   	  <option disabled="disabled">----</option>
 
 		   	  <option value="Vaccine">Vaccine</option>

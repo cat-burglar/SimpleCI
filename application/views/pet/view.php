@@ -71,30 +71,14 @@
 			      			<a class="btn btn-primary" data-toggle="tooltip" title="Edit Pet Details"href="<?php echo site_url('Pet/editPet');?>/<?php echo $pet->id?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 
 			      			<a class="btn btn-info" data-toggle="tooltip" title="View Medical Record" href="<?php echo site_url('Medicine/viewRecord');?>/<?php echo $pet->id?>"><i class="fa fa-book" aria-hidden="true"></i></a>
-
-			      			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletePet"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
-
-							<div class="modal fade" id="deletePet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								    	<div class="modal-header">
-									      	<h5 class="modal-title" id="exampleModalLabel">Delete Notice</h5>
-									      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									        <span aria-hidden="true">&times;</span>
-									        </button>
-								      	</div>
-								      	<div class="modal-body">
-								      		<h7 class="modal-title" id="exampleModalLabel">Are you sure you want to permanently delete <?php echo $pet->name; ?> ?</h7>
-								      	</div>
-								      	<div class="modal-footer">
-								      		<form method="post" action="<?php echo site_url('Pet/delete');?>/<?php echo $pet->id?>">
-											  	<button type="submit" class="btn btn-danger" value="delete">Delete</button>
-											  	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-											</form>
-								      	</div>
-								    </div>
-							  	</div>
-							</div>
+							
+							<a>
+				      		<form class="form-nostyle" method="post" 
+				      		onsubmit="return confirm('<?php echo 'Permanently delete ' . $pet->name . '?' ;?>');"
+				      		action="<?php echo site_url('Pet/delete');?>/<?php echo $pet->id?>">
+				      			<button type="submit" class="btn btn-danger"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
+							</form>
+							</a>
 			      		</td>
 			      	</tr>
 			 <?php $i++; } ?>

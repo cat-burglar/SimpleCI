@@ -310,6 +310,21 @@ footer ul.quick-links li:hover a i {
 .circle {
   border-radius: 50%;
 }
+.form-nostyle {
+    top: -2.4rem;
+    width: 30px;
+    height: 10px;
+    position: relative;
+    left: 5.7rem;
+}
+
+.form-med-nostyle {
+    top: -2.4rem;
+    width: 30px;
+    height: 10px;
+    position: relative;
+    left: 3rem;
+}
 
 /** End of Custom Styles **/
 

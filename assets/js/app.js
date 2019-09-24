@@ -20,4 +20,6 @@ if(document.getElementById('due_date') < Date.now()) {
 		}
 	});
 
-	
+function petDelete(name) {
+	confirm("Are you sure you want to delete " + name + "?");
+};

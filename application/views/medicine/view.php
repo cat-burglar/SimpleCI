@@ -1,6 +1,8 @@
 
 	<div class="container mt-3">
 		<h1><?php echo $pet->name; ?>'s Medical Record</h1>
+		<h6><?php echo $pet->notes; ?></h6>
+		<hr />
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#medModal">Add Medicine </button>
 
 		<!-- Add Medicine Modal -->
@@ -55,40 +57,20 @@
 			  			<td><?php echo $i; ?></td>
 			  			<td><?php echo $med->type; ?></td>
 			      		<td><?php echo $med->name; ?></td>
-			      		<td><?php echo $med->admin_date;?></td>
-			      		<td class="due_date"><?php echo date("m/d/Y", strtotime($med->due_date));?></td>
+			      		<td><?php echo date("M d, Y", strtotime($med->admin_date));?></td>
+			      		<td class="due_date"><?php echo date("M d, Y", strtotime($med->due_date));?></td>
 			      		<td>
 			      			<a class="btn btn-primary" data-toggle="tooltip" title="Edit Medicine Details" href="<?php echo site_url('Medicine/edit');?>/<?php echo $med->id?>">
 			      				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 			      			</a>
-							
-							<!-- DELETE -->
-			      			<button type="button" data-toggle="modal" class="btn btn-danger" data-toggle="modal" data-target="#deleteMed">
-			      				<i class="fa fa-trash" aria-hidden="true"></i> 
-			      			</button>
 
-			      			<!-- Delete Modal -->
-							<div class="modal fade" id="deleteMed" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								    	<div class="modal-header">
-									      	<h5 class="modal-title" id="deleteModalLabel">Delete Notice</h5>
-									      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									        <span aria-hidden="true">&times;</span>
-									        </button>
-								      	</div>
-								      	<div class="modal-body">
-								      		<h7 class="modal-title" id="deleteModalLabel">Are you sure you want to permanently delete this entry ?</h7>
-								      	</div>
-								      	<div class="modal-footer">
-								      		<form method="post" action="<?php echo site_url('Medicine/delete');?>/<?php echo $med->id?>">
-											  	<button type="submit" class="btn btn-danger" value="delete">Delete</button>
-											  	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-											</form>
-								      	</div>
-								    </div>
-							  	</div> <!-- Delete Modal -->
-							</div>
+			      			<a>
+				      		<form class="form-med-nostyle" method="post" 
+				      		onsubmit="return confirm('<?php echo 'Permanently delete ' . $med->type . '?' ;?>');"
+				      		action="<?php echo site_url('Medicine/delete');?>/<?php echo $med->id?>">
+				      			<button type="submit" class="btn btn-danger"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
+							</form>
+							</a>
 			      		</td>
 			      	</tr>
 			 <?php $i++; } ?>
