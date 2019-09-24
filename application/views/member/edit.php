@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5">
 	<h3 class="mt-4 mb-3 border-bottom">Edit Profile</h3>
-	<form method="post" action="<?php echo site_url('Member/update')?>/<?php echo $this->session->memberID?>">
+	<form method="post" action="<?php echo site_url('Member/update')?>">
 		<div class="form-group">
 			<label for="exampleInputEmail1">First Name</label>
 			<input type="text" class="form-control" name="firstName" value="<?php echo $member->firstName; ?>" placeholder="First Name">
@@ -11,7 +11,7 @@
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Birthdate</label>
-			<input type="date" class="form-control" name="birthdate" value="<?php echo $member->birthdate; ?>" placeholder="Birthdate">
+			<input type="date" class="form-control" name="birthdate" value="<?php echo $member->birthdate; ?>" placeholder="yyyy/mm/dd">
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Contact No</label>

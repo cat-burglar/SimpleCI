@@ -9,7 +9,8 @@
 			}
 			$this->load->model('Member_Model');
 		}
-		public function view($id) {
+		public function index() {
+			$id = $this->session->userdata('memberID');
 			$data['member'] = $this->Member_Model->getData($id);
 			$this->load->view('includes/header');
 			$this->load->view('member/view',$data);
@@ -22,19 +23,22 @@
            $this->load->view('includes/footer'); 
       	}  
 
-		public function edit($id) {
+		public function edit() {
+			$id = $this->session->userdata('memberID');
 			$data['member'] = $this->Member_Model->getData($id);
 			$this->load->view('includes/header');
 			$this->load->view('member/edit',$data);
 			$this->load->view('includes/footer');
 		}
 
-		public function update($id) {
+		public function update() {
+			$id = $this->session->userdata('memberID');
 			$this->Member_Model->updateData($id);
 			redirect("Member");
 		}
 
-		public function delete($id) {
+		public function delete() {
+			$id = $this->session->userdata('memberID');
 			$this->Member_Model->deleteData($id);
 			redirect("Login/logout");
 		}

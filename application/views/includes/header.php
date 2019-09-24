@@ -34,8 +34,8 @@
 						    <?php echo $this->session->userdata('email')?>
 						  	</a>
 						  	<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						  		<a class="dropdown-item" href="<?php echo site_url();?>/Member/view/<?php echo $this->session->memberID?>">View Profile</a>
-							    <a class="dropdown-item" href="<?php echo site_url();?>/Member/edit/<?php echo $this->session->memberID?>">Profile Settings</a>
+						  		<a class="dropdown-item" href="<?php echo site_url();?>/Member">View Profile</a>
+							    <a class="dropdown-item" href="<?php echo site_url();?>/Member/edit">Profile Settings</a>
 							    <a class="dropdown-item" href="<?php echo site_url();?>/Login/logout">Logout</a>
 						  	</div>
 						</div>
