@@ -8,16 +8,6 @@
 			$this->load->database();
 		}
 
-		public function getDueDate($type,$date) {
-			if($type == "Vaccine") {
-				$due_date = date('Y/m/d', strtotime("+1 year", strtotime($date)));
-			} else {
-				$due_date = date('Y/m/d', strtotime("+3 months", strtotime($date)));
-			}
-			var_dump($due_date);
-			return $due_date;
-		}
-
 		public function createData() {
 			$type = $this->input->post('type');
 			$due_date = $this->getDueDate($type, date('Y/m/d'));
@@ -31,6 +21,16 @@
 			);
 			
 			$this->db->insert('medicine',$data);
+		}
+
+		public function getDueDate($type,$date) {
+			if($type == "Vaccine" || $type == "Rabies") {
+				$due_date = date('Y/m/d', strtotime("+1 year", strtotime($date)));
+			} else {
+				$due_date = date('Y/m/d', strtotime("+3 months", strtotime($date)));
+			}
+			var_dump($due_date);
+			return $due_date;
 		}
 
 		function getAllData($pet_id) {
@@ -50,6 +50,7 @@
 
 			$data = array (
 				'pet_id' => $this->input->post('pet_id'),
+				'type' => $type,
 				'name' => $this->input->post('name'),
 				'admin_date' => $date,
 				'due_date' => $due_date
