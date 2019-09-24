@@ -5,7 +5,12 @@
 		<div class="form-group">
 		    <label for="type">Medicine Type</label>
 		   	<select id="type" name="type">
-			  <option value="Vaccine">Vaccine</option>
+
+		   	  <option disabled="disabled"><?php echo $med->type; ?> </option>
+		   	  <option disabled="disabled">----</option>
+
+		   	  <option value="Vaccine">Vaccine</option>
+			  <option value="Rabies">Rabies</option>
 			  <option value="Deworm">Deworm</option>
 			  <option value="Kennel Cough">Kennel Cough</option>
 			</select>

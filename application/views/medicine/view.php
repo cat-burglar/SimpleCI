@@ -19,6 +19,7 @@
 				    <label for="type">Medicine Type</label>
 				   	<select id="type" name="type">
 					  <option value="Vaccine">Vaccine</option>
+					  <option value="Rabies">Rabies</option>
 					  <option value="Deworm">Deworm</option>
 					  <option value="Kennel Cough">Kennel Cough</option>
 					</select>
